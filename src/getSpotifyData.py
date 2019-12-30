@@ -8,8 +8,8 @@ import time
 def spotify_login():
     username = ""
     scope = 'user-library-read'
-    token = util.prompt_for_user_token(username, scope, client_id='',
-                                           client_secret='',
+    token = util.prompt_for_user_token(username, scope, client_id='CLIENT_ID HERE',
+                                           client_secret='CLIENT_SECRET HERE',
                                            redirect_uri='http://localhost/')
     if token:
         sp = spotipy.Spotify(auth=token)
