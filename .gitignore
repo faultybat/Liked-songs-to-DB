@@ -1,0 +1,7 @@
+
+src/keys.yaml
+src/.cache
+src/__pycache__/getSpotifyData.cpython-38.pyc
+src/__pycache__/sqlinterface.cpython-38.pyc
+*.db
+src/liked_Songs.db-journal

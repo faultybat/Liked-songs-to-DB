@@ -2,14 +2,19 @@
 
 import spotipy
 import spotipy.util as util
+import yaml
 import time
 
 
 def spotify_login():
+    with open(r'keys.yaml') as file:
+        spotify_keys = yaml.load(file, Loader=yaml.FullLoader)
+        client_key = (spotify_keys["client_id"])
+        clinet_secret_key = (spotify_keys["client_secret"])
     username = ""
     scope = 'user-library-read'
-    token = util.prompt_for_user_token(username, scope, client_id='CLIENT_ID HERE',
-                                           client_secret='CLIENT_SECRET HERE',
+    token = util.prompt_for_user_token(username, scope, client_id=client_key,
+                                           client_secret=clinet_secret_key,
                                            redirect_uri='http://localhost/')
     if token:
         sp = spotipy.Spotify(auth=token)
