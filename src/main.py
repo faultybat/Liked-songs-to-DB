@@ -73,12 +73,13 @@ def debug():
     for i in new_song_list:
         new_song_list_ID.append(i[0])
     for i in result :
-        if i[0] in new_song_list_ID :
+        if i[0] in new_song_list_ID and (i[0] not in old_song_list_ID):
+            None
             print("-------------------------------------------------")
             print(i[1] + " has been added to liked songs")
             print("It might be worth it to update the database")
             print("Once all deleated songs have been readded")
-        if i[0] in old_song_list_ID :
+        if i[0] in old_song_list_ID and i[0] not in new_song_list_ID :
             print("-------------------------------------------------")
             print("Song : " + str(i[1]) + " is missing")
             print("The url to this song is : " + i[3])
